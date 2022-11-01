@@ -17,7 +17,8 @@ public class PostService {
         try {
             return postRepository.findById(id).get();
         } catch (Exception e) {
-            return null;
+            e.printStackTrace();
+            throw e;
         }
     }
 
@@ -26,7 +27,7 @@ public class PostService {
         return postRepository.findAll().toArray(new Post[0]);
         }catch (Exception e) {
             e.printStackTrace();
-            return null;
+            throw e;
         }
     }
 
@@ -35,7 +36,7 @@ public class PostService {
             return postRepository.findAll().stream().map((post -> post.getId() == id)).toArray( Post[]::new );
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            throw e;
         }
     }
 

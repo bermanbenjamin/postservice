@@ -12,33 +12,33 @@ public class CommentController {
     private static CommentService service;
 
     @GetMapping("/{id}")
-    public static ResponseEntity<Comment> getCommentById(@PathVariable("id")Long id) {
+    public static ResponseEntity getCommentById(@PathVariable("id")Long id) {
       try {
           return ResponseEntity.ok(service.getCommentById(id));
       } catch (Exception e) {
           e.printStackTrace();
-          return ResponseEntity.badRequest().body(null);
+          return ResponseEntity.badRequest().body(e.getMessage());
       }
     }
 
     @GetMapping("/post/{id}")
-    public static ResponseEntity<Comment[]> getAllCommentsByPostId(@PathVariable("id")Long id) {
+    public static ResponseEntity getAllCommentsByPostId(@PathVariable("id")Long id) {
         try  {
             return ResponseEntity.ok(service.getAllCommentsByPostId(id));
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.badRequest().body(null);
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
     @PostMapping("/create")
-    public static ResponseEntity<Comment> createComment(@RequestBody Comment comment) {
+    public static ResponseEntity createComment(@RequestBody Comment comment) {
        try
          {
               return ResponseEntity.ok(service.createComment(comment));
          } catch (Exception e) {
               e.printStackTrace();
-              return ResponseEntity.badRequest().body(null);
+              return ResponseEntity.badRequest().body(e.getMessage());
          }
     }
 

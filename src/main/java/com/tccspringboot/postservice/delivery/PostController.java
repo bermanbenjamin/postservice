@@ -28,39 +28,64 @@ public class PostController {
             return ResponseEntity.ok(service.getPostById(id));
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.badRequest().body(e);
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 
 
     //get all posts
     @GetMapping("/all")
-    public static Post[] getAllPosts() {
-        return service.getAllPosts();
+    public static ResponseEntity getAllPosts() {
+        try {
+            return ResponseEntity.ok(service.getAllPosts());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     //get all posts by user id
     @GetMapping("/user/{id}")
-    public static Post[] getAllPostsByUserId(@PathVariable("id")Long id) {
-        return service.getAllPostsByUserId(id);
+    public static ResponseEntity getAllPostsByUserId(@PathVariable("id")Long id) {
+        try {
+            return ResponseEntity.ok(service.getAllPostsByUserId(id));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     //create post
     @PostMapping("/create")
-    public static Post createPost(@RequestBody Post post) {
-        return service.createPost(post);
+    public static ResponseEntity createPost(@RequestBody Post post) {
+       try {
+           return ResponseEntity.ok(service.createPost(post));
+       } catch (Exception e) {
+           e.printStackTrace();
+           return ResponseEntity.badRequest().body(e.getMessage());
+       }
     }
 
     //update post
     @PutMapping("/update")
-    public static Post updatePost(@RequestBody  Post post) {
-        return service.updatePost(post);
+    public static ResponseEntity updatePost(@RequestBody  Post post) {
+       try {
+           return ResponseEntity.ok(service.updatePost(post));
+       } catch (Exception e) {
+           e.printStackTrace();
+           return ResponseEntity.badRequest().body(e.getMessage());
+       }
     }
 
     //delete post
     @GetMapping("/delete")
-    public static Post deletePost(@RequestBody Post post) {
-        return service.deletePost(post);
+    public static ResponseEntity deletePost(@RequestBody Post post) {
+       try {
+           return ResponseEntity.ok(service.deletePost(post));
+       } catch (Exception e) {
+           e.printStackTrace();
+           return ResponseEntity.badRequest().body(e.getMessage());
+       }
     }
 
 
