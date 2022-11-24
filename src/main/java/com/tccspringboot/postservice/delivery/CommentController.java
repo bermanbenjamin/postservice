@@ -43,7 +43,7 @@ public class CommentController {
     }
 
     @PutMapping("/update/{id}")
-    public static ResponseEntity<Comment> updateComment(@RequestBody Comment comment) {
+    public static ResponseEntity<Comment> updateComment(@PathVariable("id")Long id, @RequestBody Comment comment) {
         try {
                return ResponseEntity.ok(service.updateComment(comment));
             } catch (Exception e) {
@@ -52,7 +52,7 @@ public class CommentController {
         }
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public static ResponseEntity<Comment> deleteComment(@PathVariable Long id) {
         try {
             return ResponseEntity.ok(service.deleteCommentById(id));

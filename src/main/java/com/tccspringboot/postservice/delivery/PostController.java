@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.websocket.server.PathParam;
 import java.util.logging.Logger;
 
-@RestController("/posts")
+@RestController
 @RequestMapping("/posts")
 public class PostController {
 
@@ -78,7 +78,7 @@ public class PostController {
     }
 
     //delete post
-    @GetMapping("/delete")
+    @DeleteMapping("/delete")
     public static ResponseEntity deletePost(@RequestBody Post post) {
        try {
            return ResponseEntity.ok(service.deletePost(post));

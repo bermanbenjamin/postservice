@@ -15,7 +15,7 @@ public class DislikePost {
 
         public static Post dislikePost(Long id, Long userId) {
 
-            service.getPostById(id).getLikes().remove(userId);
+           // service.getPostById(id).getLikes().remove(userId);
 
             return service.updatePost(service.getPostById(id));
 

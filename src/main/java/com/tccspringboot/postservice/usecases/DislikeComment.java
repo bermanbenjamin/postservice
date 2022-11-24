@@ -17,7 +17,7 @@ public class DislikeComment {
 
         Comment comment = service.getCommentById(id);
 
-        comment.getLikes().remove(userId);
+        //comment.getLikes().remove(userId);
 
         return service.updateComment(comment);
     }
