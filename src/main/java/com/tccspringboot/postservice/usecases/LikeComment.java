@@ -19,7 +19,7 @@ public class LikeComment {
 
        Comment comment = service.getCommentById(id);
 
-       comment.getLikes().add(userId);
+     //  comment.getLikes().add(userId);
 
        return service.updateComment(comment);
     }

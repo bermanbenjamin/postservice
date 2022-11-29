@@ -15,7 +15,7 @@ public class LikePost {
 
     public static Post likePost(Long id, Long userId) {
 
-        service.getPostById(id).getLikes().add(userId);
+       // service.getPostById(id).getLikes().add(userId);
 
         return service.updatePost(service.getPostById(id));
 

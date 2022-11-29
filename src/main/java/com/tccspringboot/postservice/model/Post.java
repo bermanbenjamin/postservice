@@ -2,27 +2,26 @@ package com.tccspringboot.postservice.model;
 
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 @Entity
 @Table(name = "posts")
 public class Post {
 
     @Id
-    @Column(name = "postId")
+    @Column(name = "post_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "userId")
+    @Column(name = "user_id")
     private Long userId;
 
     @Column(name = "title")
     private String title;
 
-    @Column(name = "body")
+    @Column(name = "content")
     private String body;
 
-    @Column(name = "date")
+    @Column(name = "post_date")
     private String date;
 
     @Column(name = "likes")
@@ -30,11 +29,11 @@ public class Post {
 
     @Column(name = "dislikes")
     private Long dislikes;
-
+    
     @Column(name = "comments")
-    private ArrayList<Comment> comments;
+    private Long comments;
 
-    public Post(Long id, Long userId, String title, String body, String date, Long likes, Long dislikes, ArrayList<Comment> comments) {
+    public Post(Long id, Long userId, String title, String body, String date, Long likes, Long dislikes, Long comments) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -100,14 +99,6 @@ public class Post {
 
     public void setDislikes(Long dislikes) {
         this.dislikes = dislikes;
-    }
-
-    public ArrayList<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(ArrayList<Comment> comments) {
-        this.comments = comments;
     }
 
 }
