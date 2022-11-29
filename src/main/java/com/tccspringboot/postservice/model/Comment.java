@@ -16,9 +16,7 @@ public class Comment {
     private Long postId;
     
     @Column(name = "user_id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    private Long user;
     
     @Column(name = "content")
     private String content;
@@ -34,7 +32,7 @@ public class Comment {
 
     public Comment() {}
     
-    public Comment(Long id, Long postId, User user, String content, String date, Long likes, Long dislikes) {
+    public Comment(Long id, Long postId, Long user, String content, String date, Long likes, Long dislikes) {
 
         this.id = id;
         this.postId = postId;
@@ -94,11 +92,11 @@ public class Comment {
 		this.postId = postId;
 	}
 
-	public User getUser() {
+	public Long getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Long user) {
 		this.user = user;
 	}
 }
