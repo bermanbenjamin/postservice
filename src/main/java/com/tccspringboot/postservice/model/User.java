@@ -29,12 +29,12 @@ public class User {
 	private ArrayList<Post> posts;
 	
 	@Column  
-	private ArrayList<Long> followers;
+	private Long followers;
 	
 	@Column  
 	private Date birthdate;
 
-	public User(Long id, String name, String password, ArrayList<Post> posts, ArrayList<Long> followers,
+	public User(Long id, String name, String password, ArrayList<Post> posts, Long followers,
 			Date birthdate) {
 		super();
 		this.id = id;
@@ -77,11 +77,11 @@ public class User {
 		this.posts = posts;
 	}
 
-	public ArrayList<Long> getFollowers() {
+	public Long getFollowers() {
 		return followers;
 	}
 
-	public void setFollowers(ArrayList<Long> followers) {
+	public void setFollowers(Long followers) {
 		this.followers = followers;
 	}
 

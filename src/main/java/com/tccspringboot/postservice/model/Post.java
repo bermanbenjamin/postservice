@@ -26,15 +26,15 @@ public class Post {
     private String date;
 
     @Column(name = "likes")
-    private ArrayList<Long> likes;
+    private Long likes;
 
     @Column(name = "dislikes")
-    private ArrayList<Long> dislikes;
+    private Long dislikes;
 
     @Column(name = "comments")
     private ArrayList<Comment> comments;
 
-    public Post(Long id, Long userId, String title, String body, String date, ArrayList<Long> likes, ArrayList<Long> dislikes, ArrayList<Comment> comments) {
+    public Post(Long id, Long userId, String title, String body, String date, Long likes, Long dislikes, ArrayList<Comment> comments) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -86,19 +86,19 @@ public class Post {
         this.date = date;
     }
 
-    public ArrayList<Long> getLikes() {
+    public Long getLikes() {
         return likes;
     }
 
-    public void setLikes(ArrayList<Long> likes) {
+    public void setLikes(Long likes) {
         this.likes = likes;
     }
 
-    public ArrayList<Long> getDislikes() {
+    public Long getDislikes() {
         return dislikes;
     }
 
-    public void setDislikes(ArrayList<Long> dislikes) {
+    public void setDislikes(Long dislikes) {
         this.dislikes = dislikes;
     }
 

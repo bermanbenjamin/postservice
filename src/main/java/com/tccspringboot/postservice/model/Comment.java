@@ -1,7 +1,6 @@
 package com.tccspringboot.postservice.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 @Entity
 @Table(name = "comments")
@@ -15,10 +14,10 @@ public class Comment {
     private Long userId;
     private String body;
     private String date;
-    private ArrayList<Long> likes;
-    private ArrayList<Long> dislikes;
+    private Long likes;
+    private Long dislikes;
 
-    public Comment(Long id, Long postId, Long userId, String body, String date, ArrayList<Long> likes, ArrayList<Long> dislikes) {
+    public Comment(Long id, Long postId, Long userId, String body, String date, Long likes, Long dislikes) {
         this.id = id;
         this.postId = postId;
         this.userId = userId;
@@ -69,19 +68,19 @@ public class Comment {
         this.date = date;
     }
 
-    public ArrayList<Long> getLikes() {
+    public Long getLikes() {
         return likes;
     }
 
-    public void setLikes(ArrayList<Long> likes) {
+    public void setLikes(Long likes) {
         this.likes = likes;
     }
 
-    public ArrayList<Long> getDislikes() {
+    public Long getDislikes() {
         return dislikes;
     }
 
-    public void setDislikes(ArrayList<Long> dislikes) {
+    public void setDislikes(Long dislikes) {
         this.dislikes = dislikes;
     }
 }
